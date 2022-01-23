@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Task Tracker</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/styles.css" rel="stylesheet">
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+		<style>
+
+			:root{
+				--primaryColor:rgba(0,0,0,0.1);
+			}
+			*{
+				margin:0;
+				padding:0;
+			}
+			body{
+				width:100vw;
+			}
+			.main-container{
+				margin-top:1rem;
+				min-height:250px !important;
+				border: 2px solid var(--primaryColor) !important;
+			}
+			.heading-row{
+				padding:0.5rem;
+				background:var(--primaryColor);
+			}
+			[class*="btn"]{
+				border-radius: 50px;
+				text-align: center;
+				padding:1rem;
+				font-weight:bold;
+				transition:all 0.2s;
+			}
+			[class*="btn"]:hover{
+				letter-spacing: 2px;
+			}
+			.btn-end{
+				color:red !important;
+				background:red !important;
+				color:white !important;
+				text-align: center;
+			}
+
+			.btn-add{
+				color:green !important;
+				background:green !important;
+				color:white !important;
+				text-align: center;
+			}
+			.heading-container{
+				display:grid;
+				place-content: center;
+			}
+			.heading-container h5{
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				word-spacing: 5px;
+				font-weight: bolder;
+			}
+
+			.task-list{
+				padding:0.5rem !important;
+			}
+			.task-row{
+				position:relative;
+				background:var(--primaryColor);
+				color:black !important;
+				font-weight: bold !important;
+				letter-spacing:2px !important;
+				word-spacing:4px !important;
+				text-align:center !important;
+				padding:1rem;
+				margin-bottom:0.5rem !important;
+				transition: all 0.25s !important;
+			}
+			.task-row::before{
+				content:"";
+				position:absolute;
+				left:0;
+				top:0px;
+				bottom:0;
+				width:8px;
+				height:100%;
+				background:green;
+			}
+
+			.task,.time{
+				border-right:4px solid white !important;
+				color: black !important;
+				display:grid !important;
+				place-content:center !important;
+			}
+			.checkbox-container{
+				border:none !important;
+			}
+			.form-check-input {
+				width:100% !important;
+				height:100% !important;
+				margin-top:0 !important;
+			}
+			.form-container{
+				display:none;
+				padding:0.5rem;
+				margin-bottom:0.5rem !important;
+				background:var(--primaryColor);
+			}
+
+
+			.content-container{
+				display:flex;
+			}
+
+			.btn-add-task{
+				width:50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container-md justify-content-center main-container border">
+			<div class="row heading-row">
+				<div class="col col-lg-10 col-md-8 col-sm-10 col-xs-10 justify-content-center heading-container">
+					<h5>Task Tracker</h5>
+				</div>
+				<div class="col col-lg-2 col-md-4 col-sm-2  col-xs-2 btn  btn-add">ADD TASK</div>
+			</div>
+			<div class="container-md task-list">
+			</div>
+			<div class="row-cols-auto form-container">
+				<div>
+					<div class="row justify-content-center content-container">
+						<div class="col col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-9 text-center">
+							<input type="text" id="task" placeholder="Enter task" class="form-control">
+						</div>
+						<div class="col col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3">
+							<input type="datetime-local" id="time" placeholder="Enter time" class="form-control">
+						</div>
+						
+					</div>
+					<div class="row justify-content-center btn-container">
+						<input type="submit" class="btn btn-add-task btn-primary" value="ADD">
+					</div>
+				</div>
+				
+				
+			</div>
+		</div>
+
+
+		<script src="bootstrap/js/bootstrap.bundle.js" async></script>
+		<script src="scripts/jquery.js" defer></script>
+		<script src="scripts/main.js" defer></script>
+	</body>
+</html>
